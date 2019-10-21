@@ -176,3 +176,9 @@ RUN add-apt-repository \
 RUN apt-get update -y
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 RUN usermod -aG docker root
+
+# AWS CLI
+
+RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+RUN unzip awscli-bundle.zip
+RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
