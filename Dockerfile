@@ -211,6 +211,6 @@ COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
 
-VOLUME /var/lib/docker
-EXPOSE 2375
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+# VOLUME /var/lib/docker
+# EXPOSE 2375
+# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
