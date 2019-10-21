@@ -160,6 +160,7 @@ RUN set -o errexit -o nounset \
 
 # AWS CLI
 
+RUN apt-get update && apt-get install -y curl
 RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 RUN unzip awscli-bundle.zip
 RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
