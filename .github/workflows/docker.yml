@@ -1,0 +1,16 @@
+name: Docker Image build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mazuninky/gradle-aws-docker
+    - name: Login to Docker Hub
+      run: echo $ DOCKER_ACCESS_TOKEN | docker login -u mazuninky --password-stdin
+    - name: Push image
+      run: docker push mazuninky/gradle-aws-docker
