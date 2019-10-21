@@ -11,6 +11,6 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag mazuninky/gradle-aws-docker
     - name: Login to Docker Hub
-      run: echo $DOCKER_ACCESS_TOKEN | docker login -u mazuninky --password-stdin
+      run: docker login -u mazuninky -p $DOCKER_ACCESS_TOKEN
     - name: Push image
       run: docker push mazuninky/gradle-aws-docker
